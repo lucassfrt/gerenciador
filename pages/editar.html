@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Edição demonstrativa de uma obra no Gerenciador de Filmes e Séries.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Editar obra | Gerenciador de Filmes e Séries</title>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+  <header class="site-header">
+    <div class="container">
+      <p class="site-name">Gerenciador de Filmes e Séries</p>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="../index.html">Coleção</a></li>
+          <li><a href="cadastro.html">Cadastrar obra</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo-principal" class="container page-content">
+    <section class="page-intro" aria-labelledby="titulo-pagina">
+      <p class="eyebrow">Alteração demonstrativa</p>
+      <h1 id="titulo-pagina">Editar Duna: Parte Dois</h1>
+      <p>Revise os dados preenchidos. Os campos marcados com <span aria-hidden="true">*</span> são obrigatórios.</p>
+    </section>
+
+    <section aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Dados da obra</h2>
+      <form>
+        <fieldset>
+          <legend>Identificação e acompanhamento</legend>
+
+          <div class="form-grid">
+            <div class="field field-wide">
+              <label for="editar-titulo">Título <span aria-hidden="true">*</span></label>
+              <input type="text" id="editar-titulo" name="titulo" value="Duna: Parte Dois" required autocomplete="off">
+            </div>
+
+            <div class="field">
+              <label for="editar-tipo">Tipo <span aria-hidden="true">*</span></label>
+              <select id="editar-tipo" name="tipo" required>
+                <option value="" disabled>Selecione o tipo</option>
+                <option value="filme" selected>Filme</option>
+                <option value="serie">Série</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="editar-genero">Gênero <span aria-hidden="true">*</span></label>
+              <input type="text" id="editar-genero" name="genero" list="sugestoes-genero-edicao" value="Ficção Científica" required autocomplete="off">
+              <datalist id="sugestoes-genero-edicao">
+                <option value="Ação"></option>
+                <option value="Comédia"></option>
+                <option value="Drama"></option>
+                <option value="Ficção Científica"></option>
+                <option value="Suspense"></option>
+              </datalist>
+            </div>
+
+            <div class="field">
+              <label for="editar-ano">Ano de lançamento <span aria-hidden="true">*</span></label>
+              <!-- O cinema surgiu no fim do século XIX; 2100 aceita obras anunciadas no futuro. -->
+              <input type="number" id="editar-ano" name="ano" min="1888" max="2100" step="1" value="2024" required inputmode="numeric">
+            </div>
+
+            <div class="field">
+              <label for="editar-status">Status de acompanhamento <span aria-hidden="true">*</span></label>
+              <select id="editar-status" name="status" required>
+                <option value="" disabled>Selecione o status</option>
+                <option value="quero-assistir">Quero Assistir</option>
+                <option value="assistindo">Assistindo</option>
+                <option value="concluido" selected>Concluído</option>
+                <option value="abandonado">Abandonado</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="editar-avaliacao">Avaliação pessoal</label>
+              <input type="number" id="editar-avaliacao" name="avaliacao" min="1" max="5" step="1" value="5" inputmode="numeric" aria-describedby="ajuda-avaliacao-edicao">
+              <small id="ajuda-avaliacao-edicao">Use um número inteiro de 1 a 5. Deixe vazio se ainda não avaliou.</small>
+            </div>
+
+            <div class="field field-wide checkbox-field">
+              <input type="checkbox" id="editar-favorito" name="favorito" value="sim" checked>
+              <label for="editar-favorito">Marcar como favorito</label>
+            </div>
+
+            <div class="field field-wide">
+              <label for="editar-observacoes">Observações</label>
+              <textarea id="editar-observacoes" name="observacoes" rows="5">Uma continuação visualmente impressionante, com ótima trilha sonora e construção de mundo.</textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <p class="static-notice" id="aviso-edicao">Esta é uma interface estática. As alterações ainda não são gravadas.</p>
+        <div class="form-actions">
+          <button type="button" aria-describedby="aviso-edicao">Salvar alterações</button>
+          <a href="detalhes.html">Cancelar e voltar aos detalhes</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container"><p>Gerenciador de Filmes e Séries — Trabalho acadêmico, Etapa 2.</p></div>
+  </footer>
+</body>
+</html>

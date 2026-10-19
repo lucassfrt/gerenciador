@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detalhes de uma obra do Gerenciador de Filmes e Séries.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Detalhes | Gerenciador de Filmes e Séries</title>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+  <header class="site-header">
+    <div class="container">
+      <p class="site-name">Gerenciador de Filmes e Séries</p>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="../index.html">Coleção</a></li>
+          <li><a href="cadastro.html">Cadastrar obra</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo-principal" class="container page-content">
+    <section class="page-intro" aria-labelledby="titulo-pagina">
+      <p class="eyebrow">Ficha da coleção</p>
+      <h1 id="titulo-pagina">Duna: Parte Dois</h1>
+      <p>Confira os dados registrados para esta obra.</p>
+    </section>
+
+    <article class="details-card" aria-labelledby="titulo-ficha">
+      <h2 id="titulo-ficha">Informações da obra</h2>
+      <dl class="details-list">
+        <div>
+          <dt>Tipo</dt>
+          <dd>Filme</dd>
+        </div>
+        <div>
+          <dt>Gênero</dt>
+          <dd>Ficção Científica</dd>
+        </div>
+        <div>
+          <dt>Ano de lançamento</dt>
+          <dd>2024</dd>
+        </div>
+        <div>
+          <dt>Status de acompanhamento</dt>
+          <dd><span class="status status-completed">Concluído</span></dd>
+        </div>
+        <div>
+          <dt>Avaliação pessoal</dt>
+          <dd><span aria-hidden="true">★★★★★</span> 5 de 5 estrelas</dd>
+        </div>
+        <div>
+          <dt>Favorito</dt>
+          <dd>Sim</dd>
+        </div>
+        <div class="details-wide">
+          <dt>Observações</dt>
+          <dd>Uma continuação visualmente impressionante, com ótima trilha sonora e construção de mundo.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <aside class="static-notice" id="aviso-exclusao" aria-label="Aviso sobre as ações">
+      As ações de alteração e exclusão são demonstrativas nesta etapa. Nenhum dado será modificado.
+    </aside>
+
+    <div class="form-actions">
+      <a class="button-link" href="editar.html">Editar Duna: Parte Dois</a>
+      <button type="button" class="button-danger" aria-describedby="aviso-exclusao">Excluir Duna: Parte Dois</button>
+      <a href="../index.html">Voltar à coleção</a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container"><p>Gerenciador de Filmes e Séries — Trabalho acadêmico, Etapa 2.</p></div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coleção pessoal do Gerenciador de Filmes e Séries.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
+  <title>Coleção | Gerenciador de Filmes e Séries</title>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <p class="site-name">Gerenciador de Filmes e Séries</p>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Coleção</a></li>
+          <li><a href="pages/cadastro.html">Cadastrar obra</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" class="container page-content">
+    <section class="hero" aria-labelledby="titulo-pagina">
+      <p class="eyebrow">Sua lista, do seu jeito</p>
+      <h1 id="titulo-pagina">Minha coleção</h1>
+      <p>Organize filmes e séries que você quer assistir, está acompanhando ou já concluiu.</p>
+      <a class="button-link" href="pages/cadastro.html">Cadastrar nova obra</a>
+    </section>
+
+    <aside class="static-notice" id="aviso-etapa" aria-label="Aviso sobre esta etapa">
+      <strong>Cadastro e exclusão disponíveis.</strong> As obras ficam salvas neste navegador. Pesquisa, filtros, ordenação e edição serão implementados em uma etapa posterior.
+    </aside>
+
+    <section class="controls" aria-labelledby="titulo-consulta">
+      <div class="section-heading">
+        <p class="eyebrow">Encontre uma obra</p>
+        <h2 id="titulo-consulta">Consultar coleção</h2>
+      </div>
+
+      <form class="search-form" role="search">
+        <div class="field search-field">
+          <label for="pesquisa">Pesquisar por título</label>
+          <div class="inline-control">
+            <input type="search" id="pesquisa" name="pesquisa" placeholder="Ex.: Duna" aria-describedby="aviso-etapa">
+            <button type="button" aria-describedby="aviso-etapa">Pesquisar</button>
+          </div>
+        </div>
+      </form>
+
+      <form class="filter-form">
+        <fieldset>
+          <legend>Filtros e ordenação</legend>
+          <div class="filters-grid">
+            <div class="field">
+              <label for="filtro-tipo">Tipo</label>
+              <select id="filtro-tipo" name="tipo">
+                <option value="todos">Todos os tipos</option>
+                <option value="filme">Filme</option>
+                <option value="serie">Série</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="filtro-genero">Gênero</label>
+              <select id="filtro-genero" name="genero">
+                <option value="todos">Todos os gêneros</option>
+                <option value="animacao">Animação</option>
+                <option value="comedia-dramatica">Comédia dramática</option>
+                <option value="drama">Drama</option>
+                <option value="ficcao-cientifica">Ficção Científica</option>
+                <option value="suspense">Suspense</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="filtro-status">Status</label>
+              <select id="filtro-status" name="status">
+                <option value="todos">Todos os status</option>
+                <option value="quero-assistir">Quero Assistir</option>
+                <option value="assistindo">Assistindo</option>
+                <option value="concluido">Concluído</option>
+                <option value="abandonado">Abandonado</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="filtro-favorito">Favorito</label>
+              <select id="filtro-favorito" name="favorito">
+                <option value="todos">Todos</option>
+                <option value="sim">Somente favoritos</option>
+                <option value="nao">Somente não favoritos</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="ordenacao">Ordenar por</label>
+              <select id="ordenacao" name="ordenacao">
+                <option value="titulo-az">Título: A–Z</option>
+                <option value="titulo-za">Título: Z–A</option>
+                <option value="ano-recente">Ano: mais recente</option>
+                <option value="ano-antigo">Ano: mais antigo</option>
+                <option value="avaliacao-maior">Avaliação: maior primeiro</option>
+                <option value="avaliacao-menor">Avaliação: menor primeiro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" aria-describedby="aviso-etapa">Aplicar filtros</button>
+            <button type="reset" class="button-secondary">Limpar filtros</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="collection" aria-labelledby="titulo-colecao">
+      <div class="section-heading">
+        <p class="eyebrow" id="contador-obras">6 obras</p>
+        <h2 id="titulo-colecao">Obras cadastradas</h2>
+      </div>
+
+      <p class="feedback" id="mensagem-colecao" role="status"></p>
+
+      <div class="table-wrapper" tabindex="0" role="region" aria-label="Coleção de filmes e séries" aria-describedby="descricao-tabela">
+        <p id="descricao-tabela" class="visually-hidden">Tabela com as obras cadastradas e controles para gerenciá-las.</p>
+        <table>
+          <caption>Coleção pessoal de filmes e séries</caption>
+          <thead>
+            <tr>
+              <th scope="col">Título</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Gênero</th>
+              <th scope="col">Ano</th>
+              <th scope="col">Status</th>
+              <th scope="col">Avaliação</th>
+              <th scope="col">Favorito</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="lista-obras">
+            <tr>
+              <th scope="row">Duna: Parte Dois</th>
+              <td>Filme</td>
+              <td>Ficção Científica</td>
+              <td>2024</td>
+              <td><span class="status status-completed">Concluído</span></td>
+              <td><span aria-hidden="true">★★★★★</span><span class="visually-hidden">5 de 5 estrelas</span> <span class="rating-text">(5/5)</span></td>
+              <td>Sim</td>
+              <td>
+                <div class="table-actions">
+                  <a href="pages/detalhes.html" aria-label="Ver detalhes de Duna: Parte Dois">Detalhes</a>
+                  <a href="pages/editar.html" aria-label="Editar Duna: Parte Dois">Editar</a>
+                  <button type="button" class="button-danger" aria-label="Excluir Duna: Parte Dois">Excluir</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Ruptura</th>
+              <td>Série</td>
+              <td>Drama</td>
+              <td>2022</td>
+              <td><span class="status status-watching">Assistindo</span></td>
+              <td><span aria-hidden="true">★★★★☆</span><span class="visually-hidden">4 de 5 estrelas</span> <span class="rating-text">(4/5)</span></td>
+              <td>Sim</td>
+              <td>
+                <div class="table-actions">
+                  <button type="button" disabled aria-label="Detalhes de Ruptura indisponíveis nesta demonstração">Detalhes</button>
+                  <button type="button" disabled aria-label="Edição de Ruptura indisponível nesta demonstração">Editar</button>
+                  <button type="button" class="button-danger" aria-label="Excluir Ruptura">Excluir</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Parasita</th>
+              <td>Filme</td>
+              <td>Suspense</td>
+              <td>2019</td>
+              <td><span class="status status-completed">Concluído</span></td>
+              <td><span aria-hidden="true">★★★★★</span><span class="visually-hidden">5 de 5 estrelas</span> <span class="rating-text">(5/5)</span></td>
+              <td>Não</td>
+              <td>
+                <div class="table-actions">
+                  <button type="button" disabled aria-label="Detalhes de Parasita indisponíveis nesta demonstração">Detalhes</button>
+                  <button type="button" disabled aria-label="Edição de Parasita indisponível nesta demonstração">Editar</button>
+                  <button type="button" class="button-danger" aria-label="Excluir Parasita">Excluir</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">The Bear</th>
+              <td>Série</td>
+              <td>Comédia dramática</td>
+              <td>2022</td>
+              <td><span class="status status-planned">Quero Assistir</span></td>
+              <td>Não avaliado</td>
+              <td>Não</td>
+              <td>
+                <div class="table-actions">
+                  <button type="button" disabled aria-label="Detalhes de The Bear indisponíveis nesta demonstração">Detalhes</button>
+                  <button type="button" disabled aria-label="Edição de The Bear indisponível nesta demonstração">Editar</button>
+                  <button type="button" class="button-danger" aria-label="Excluir The Bear">Excluir</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Dark</th>
+              <td>Série</td>
+              <td>Ficção Científica</td>
+              <td>2017</td>
+              <td><span class="status status-abandoned">Abandonado</span></td>
+              <td><span aria-hidden="true">★★★☆☆</span><span class="visually-hidden">3 de 5 estrelas</span> <span class="rating-text">(3/5)</span></td>
+              <td>Não</td>
+              <td>
+                <div class="table-actions">
+                  <button type="button" disabled aria-label="Detalhes de Dark indisponíveis nesta demonstração">Detalhes</button>
+                  <button type="button" disabled aria-label="Edição de Dark indisponível nesta demonstração">Editar</button>
+                  <button type="button" class="button-danger" aria-label="Excluir Dark">Excluir</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">O Castelo Animado</th>
+              <td>Filme</td>
+              <td>Animação</td>
+              <td>2004</td>
+              <td><span class="status status-planned">Quero Assistir</span></td>
+              <td><span aria-hidden="true">★★★★☆</span><span class="visually-hidden">4 de 5 estrelas</span> <span class="rating-text">(4/5)</span></td>
+              <td>Sim</td>
+              <td>
+                <div class="table-actions">
+                  <button type="button" disabled aria-label="Detalhes de O Castelo Animado indisponíveis nesta demonstração">Detalhes</button>
+                  <button type="button" disabled aria-label="Edição de O Castelo Animado indisponível nesta demonstração">Editar</button>
+                  <button type="button" class="button-danger" aria-label="Excluir O Castelo Animado">Excluir</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Gerenciador de Filmes e Séries — Trabalho acadêmico, Etapa 2.</p>
+    </div>
+  </footer>
+</body>
+</html>

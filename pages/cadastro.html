@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastro de uma obra no Gerenciador de Filmes e Séries.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/script.js" defer></script>
+  <title>Cadastro | Gerenciador de Filmes e Séries</title>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+  <header class="site-header">
+    <div class="container">
+      <p class="site-name">Gerenciador de Filmes e Séries</p>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="../index.html">Coleção</a></li>
+          <li><a href="cadastro.html" aria-current="page">Cadastrar obra</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo-principal" class="container page-content">
+    <section class="page-intro" aria-labelledby="titulo-pagina">
+      <h1 id="titulo-pagina">Cadastrar filme ou série</h1>
+      <p>Adicione uma obra à sua coleção pessoal. Os campos marcados com <span aria-hidden="true">*</span> são obrigatórios.</p>
+    </section>
+
+    <section aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Dados da obra</h2>
+      <form id="form-cadastro">
+        <fieldset>
+          <legend>Identificação e acompanhamento</legend>
+
+          <div class="form-grid">
+            <div class="field field-wide">
+              <label for="titulo">Título <span aria-hidden="true">*</span></label>
+              <input type="text" id="titulo" name="titulo" required autocomplete="off">
+            </div>
+
+            <div class="field">
+              <label for="tipo">Tipo <span aria-hidden="true">*</span></label>
+              <select id="tipo" name="tipo" required>
+                <option value="" selected disabled>Selecione o tipo</option>
+                <option value="filme">Filme</option>
+                <option value="serie">Série</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="genero">Gênero <span aria-hidden="true">*</span></label>
+              <input type="text" id="genero" name="genero" list="sugestoes-genero" required autocomplete="off">
+              <datalist id="sugestoes-genero">
+                <option value="Ação"></option>
+                <option value="Comédia"></option>
+                <option value="Drama"></option>
+                <option value="Ficção Científica"></option>
+                <option value="Suspense"></option>
+              </datalist>
+            </div>
+
+            <div class="field">
+              <label for="ano">Ano de lançamento <span aria-hidden="true">*</span></label>
+              <!-- O cinema surgiu no fim do século XIX; 2100 aceita obras anunciadas no futuro. -->
+              <input type="number" id="ano" name="ano" min="1888" max="2100" step="1" required inputmode="numeric">
+            </div>
+
+            <div class="field">
+              <label for="status">Status de acompanhamento <span aria-hidden="true">*</span></label>
+              <select id="status" name="status" required>
+                <option value="" selected disabled>Selecione o status</option>
+                <option value="quero-assistir">Quero Assistir</option>
+                <option value="assistindo">Assistindo</option>
+                <option value="concluido">Concluído</option>
+                <option value="abandonado">Abandonado</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="avaliacao">Avaliação pessoal</label>
+              <input type="number" id="avaliacao" name="avaliacao" min="1" max="5" step="1" inputmode="numeric" aria-describedby="ajuda-avaliacao">
+              <small id="ajuda-avaliacao">Use um número inteiro de 1 a 5. Deixe vazio se ainda não avaliou.</small>
+            </div>
+
+            <div class="field field-wide checkbox-field">
+              <input type="checkbox" id="favorito" name="favorito" value="sim">
+              <label for="favorito">Marcar como favorito</label>
+            </div>
+
+            <div class="field field-wide">
+              <label for="observacoes">Observações</label>
+              <textarea id="observacoes" name="observacoes" rows="5" placeholder="Registre comentários pessoais sobre a obra."></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <p class="static-notice" id="aviso-formulario">A obra é salva neste navegador e aparece na coleção logo após o cadastro.</p>
+        <div class="form-actions">
+          <button type="submit" aria-describedby="aviso-formulario">Cadastrar obra</button>
+          <button type="reset" class="button-secondary">Limpar campos</button>
+          <a href="../index.html">Voltar à coleção</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container"><p>Gerenciador de Filmes e Séries — Trabalho acadêmico, Etapa 2.</p></div>
+  </footer>
+</body>
+</html>
