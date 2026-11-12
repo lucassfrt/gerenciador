@@ -27,6 +27,14 @@
       <p>Adicione uma obra à sua coleção pessoal. Os campos marcados com <span aria-hidden="true">*</span> são obrigatórios.</p>
     </section>
 
+    <section class="api-search" aria-labelledby="titulo-busca-api">
+      <h2 id="titulo-busca-api">Buscar série no TVmaze</h2>
+      <p>Encontre uma série na API pública e use os dados para preencher seu cadastro.</p>
+      <form id="form-busca-api" role="search"><div class="field"><label for="busca-api">Nome da série</label><div class="inline-control"><input id="busca-api" name="busca" type="search" placeholder="Ex.: Dark" minlength="2" required><button type="submit">Buscar séries</button></div></div></form>
+      <p id="feedback-api" class="feedback" role="status"></p>
+      <div id="resultados-api" class="api-results" aria-live="polite"></div>
+    </section>
+
     <section aria-labelledby="titulo-formulario">
       <h2 id="titulo-formulario">Dados da obra</h2>
       <form id="form-cadastro">
@@ -96,6 +104,7 @@
         </fieldset>
 
         <p class="static-notice" id="aviso-formulario">A obra é salva neste navegador e aparece na coleção logo após o cadastro.</p>
+        <p data-feedback class="feedback" role="status"></p>
         <div class="form-actions">
           <button type="submit" aria-describedby="aviso-formulario">Cadastrar obra</button>
           <button type="reset" class="button-secondary">Limpar campos</button>
