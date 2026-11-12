@@ -189,6 +189,24 @@ form:not(.search-form):not(.filter-form) {
   box-shadow: var(--shadow);
 }
 
+.api-search,
+.api-result {
+  padding: 1.25rem;
+  margin-block: 1rem;
+  border: 1px solid var(--border, #d7dce2);
+  border-radius: 0.75rem;
+  background: var(--surface, #fff);
+}
+
+.api-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+}
+
+.api-result h3 { margin-top: 0; }
+.api-result p { line-height: 1.5; }
+
 .search-form,
 .filter-form {
   margin-block: 1.25rem;

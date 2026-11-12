@@ -32,7 +32,7 @@
     </section>
 
     <aside class="static-notice" id="aviso-etapa" aria-label="Aviso sobre esta etapa">
-      <strong>Cadastro e exclusão disponíveis.</strong> As obras ficam salvas neste navegador. Pesquisa, filtros, ordenação e edição serão implementados em uma etapa posterior.
+      <strong>Gerencie sua coleção.</strong> Cadastre, pesquise, filtre, ordene e edite suas obras. Os dados ficam salvos neste navegador.
     </aside>
 
     <section class="controls" aria-labelledby="titulo-consulta">
@@ -46,7 +46,7 @@
           <label for="pesquisa">Pesquisar por título</label>
           <div class="inline-control">
             <input type="search" id="pesquisa" name="pesquisa" placeholder="Ex.: Duna" aria-describedby="aviso-etapa">
-            <button type="button" aria-describedby="aviso-etapa">Pesquisar</button>
+            <button type="submit" aria-describedby="aviso-etapa">Pesquisar</button>
           </div>
         </div>
       </form>
@@ -110,7 +110,7 @@
           </div>
 
           <div class="form-actions">
-            <button type="button" aria-describedby="aviso-etapa">Aplicar filtros</button>
+            <button type="button" id="aplicar-filtros" aria-describedby="aviso-etapa">Aplicar filtros</button>
             <button type="reset" class="button-secondary">Limpar filtros</button>
           </div>
         </fieldset>
